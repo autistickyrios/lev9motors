@@ -1,0 +1,178 @@
+/* Basic reset for margins and padding */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Basic styling for each section */
+/* Navbar Base */
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2); /* Glassmorphism effect */
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Navbar Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 12px;
+  transition: 0.3s;
+}
+
+/* Hover Effect (Neon Glow) */
+.nav-links a:hover {
+  /* color: cyan;
+  text-shadow: 0 0 10px cyan, 0 0 20px cyan; */
+  color: rgb(224, 28, 2);
+  text-shadow: 0px 0px 8px rgb(255, 30, 0);
+}
+
+/* Hamburger Menu (Mobile) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 30px;
+  height: 3px;
+  background: white;
+  transition: 0.3s;
+}
+
+section {
+  position: relative;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Specific background images for each section */
+.section1 {
+  background-image: url("img/web-img-1.jpg");
+}
+
+.section2 {
+  background-image: url("img/web-img-2.jpg");
+}
+
+.section3 {
+  background-image: url("img/web-img-3.jpg");
+}
+
+/* Overlay effect for text readability */
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Content styling */
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+/* Header and paragraph styling */
+.content h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.content p {
+  font-size: 1.2em;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    background: rgba(255, 255, 255, 0.767);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    flex-direction: column;
+    text-align: center;
+    padding: 15px 0;
+    display: none;
+  }
+
+  .nav-links li {
+    padding: 10px 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar.active .nav-links {
+    display: flex;
+  }
+
+  .nav-links a {
+    color: black;
+  }
+  .navbar.active .hamburger span:nth-child(1) {
+    transform: rotate(45deg);
+    position: absolute;
+  }
+  .navbar.active .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+  .navbar.active .hamburger span:nth-child(3) {
+    transform: rotate(-45deg);
+    position: absolute;
+  }
+}
