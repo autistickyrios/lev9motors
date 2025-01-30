@@ -6,3 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
     navbar.classList.toggle("active");
   });
 });
+window.addEventListener("load", () => {
+  document.getElementById("loading").style.display = "none"; // Hide the loader after content is fully loaded
+});
